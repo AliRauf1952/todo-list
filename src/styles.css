@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#filters {
+    margin-bottom: 20px;
+}
+
+.task-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.task-item:hover {
+    background-color: #f9f9f9;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: bold;
+}
+
+.task-reminder {
+    display: block;
+    font-size: 0.9rem;
+    color: #ff5722;
+    margin-top: 5px;
+}
+
+.progress-container {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #007bff;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+.sub-task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sub-task-item {
+    margin-left: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.sub-task-input {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#export-tasks {
+    margin-top: 20px;
+    background-color: #28a745;
+}
+
+#export-tasks:hover {
+    background-color: #218838;
+}
+
+input[type="datetime-local"] {
+    width: 100%;
+}
