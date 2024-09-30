@@ -4,9 +4,6 @@ import { TodoModel } from "./types/todoModel";
 import "./App.css";
 import { Todo } from "./components/Todo";
 
-// ! build a todo app
-// add todos and display them
-
 const initialTodos: TodoModel[] = [
   { isDone: false, text: "Wash the dishes", id: Math.random() },
   { isDone: false, text: "Go for a run", id: Math.random() },
@@ -15,18 +12,29 @@ const initialTodos: TodoModel[] = [
 function App() {
   const [todos, setTodos] = useState<TodoModel[]>(initialTodos);
 
-  // todo: add a new todo to the list of todos
+  const handleDelete = (id: number) => {
+    setTodos((prev) => prev.filter(todo => todo.id !== id)); // Filter out the deleted todo
+  };
+
+  const handleEdit = (id: number, newText: string) => {
+    setTodos((prev) => prev.map(todo => 
+      todo.id === id ? { ...todo, text: newText } : todo // Update the todo with new text
+    ));
+  };
 
   return (
     <div className="App">
       <h1>Todo Typescript React App</h1>
-
-      {/* form to input new todos */}
       <TodoForm setTodos={setTodos} />
-
-      {/* display for our todos */}
       {todos.map((todo) => {
-        return <Todo todo={todo} />;
+        return (
+          <Todo 
+            key={todo.id} 
+            todo={todo} 
+            onDelete={handleDelete} 
+            onEdit={handleEdit}    
+          />
+        );
       })}
     </div>
   );

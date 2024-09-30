@@ -6,16 +6,21 @@ interface TodoFormProps {
 }
 
 export const TodoForm = ({ setTodos }: TodoFormProps) => {
-  const todoInputRef = useRef<HTMLInputElement>();
+  // Changed: Provide initial value for useRef
+  const todoInputRef = useRef<HTMLInputElement>(null); 
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    setTodos((prev) => {
-      return [
+    // Added check for null to avoid potential errors
+    if (todoInputRef.current) { 
+      setTodos((prev) => [
         ...prev,
         { isDone: false, id: Math.random(), text: todoInputRef.current.value },
-      ];
-    });
+      ]);
+      // Added: Clear the input field after adding a todo
+      todoInputRef.current.value = ''; 
+    }
   };
 
   return (
