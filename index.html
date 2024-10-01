@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,4 +11,59 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>To-Do List</h1>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Enter a new task" required>
+            <input type="date" id="due-date">
+            <input type="datetime-local" id="reminder-date" placeholder="Set reminder">
+            <select id="category-select">
+                <option value="">Select category</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <select id="priority-select">
+                <option value="">Select priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+        <div id="filters">
+            <input type="text" id="search-input" placeholder="Search tasks">
+            <select id="filter-category">
+                <option value="">All categories</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <select id="filter-priority">
+                <option value="">All priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <label for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle">
+            Dark Mode
+        </label>
+        <ul id="task-list"></ul>
+        <button id="export-tasks">Export Tasks</button>
+    </div>
+    <script src="dist/app.js"></script>
+</body>
+>>>>>>> aa91d3ce03e9c1c2c3ed0118d11d0c29f740c34a
 </html>
